@@ -1,0 +1,114 @@
+* {
+    /*Reset padrão*/
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root {
+    --cor-destaque: hsl(141, 73%, 42%);
+    --cor-fonte: hsl(0, 0%, 100%);
+    --cor-fundo: hsl(0, 0%, 0%);
+}
+/* .white mode {
+    Modo claro (Não implementado ainda)
+    --cor-destaque: hsl(from var(--cor-destaque) h s calc(l + 15));
+    --cor-fonte: hsl(from var(--cor-fonte) h s calc(l - 100));
+    --cor-fundo: hsl(from var(--cor-fundo) h s calc(l + 100));
+} */
+body {
+    height: 100vh; /*Força a taag body a ocupar toda a págiina mesmo que não há elementos preenchendo*/
+    display: grid;
+    grid-template-columns: 0.35fr 1fr 1fr;
+    grid-template-rows: 0.2fr 2fr 0.3fr;
+    /*Define a grade a ser trabalhada... Os nomes podem ser
+    observados lá no HTML com o nome de grid-area: grid-main por exemplo */
+    grid-template-areas:
+    "grid-aside grid-header grid-header"
+    "grid-aside grid-main grid-main"
+    "grid-aside grid-footer grid-footer";
+    /* gap: 40px; */
+}
+/* header,main,footer,aside {
+    background-color: var(--cor-fundo);
+} */
+.header-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--cor-fonte);
+    background-color: var(--cor-fundo);
+}
+.search {
+    display: flex;
+    width: 10dvw;
+    gap: 10px;
+    position: relative;
+    z-index: 0; /* define a posição do elemento pai em 0*/
+    margin: 2em;
+    align-items: center;
+}
+
+@property --angulo {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+/* Efeito de animação */
+.search::after,
+.search::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    right: 3%; 
+    background-image: conic-gradient(from var(--angulo), hsl(from var(--cor-destaque) h s calc(l + 10)), hsl(from var(--cor-destaque) h s calc(l - 30)));
+    border-radius: 15px;
+    z-index: -1; /*deixa o item uma posição abaixo da posição do elemento pai */
+    padding: 3px;
+    animation: 3s spin linear infinite;
+}
+.search::before {
+    filter: blur(1.5rem);
+}
+/* Animação em si */
+@keyframes spin {
+    from {
+        --angulo:0deg;
+    }
+    to {
+        --angulo:360deg;
+    }
+}
+.user-profile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 50dvw;
+    gap: 7px;
+}
+.user-image img {
+    width: 100%;
+    max-width: 80px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 3px solid hsl(from var(--cor-destaque) h s calc(l + 20));
+}
+.aside-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.5em;
+    gap: 24px;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(from var(--cor-fundo) h s calc(l + 10));
+    color: hsl(from var(--cor-fonte) h s l);
+}
+.item-section {
+    display: flex;
+    
+}

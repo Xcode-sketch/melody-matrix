@@ -13,14 +13,69 @@
     <meta name="robots" content="index, follow">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/75cf8c8d61.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
     <title>Melody Matrix</title>
 </head>
 
 <body>
-    <header></header>
-    <main></main>
+    <header style="grid-area: grid-header">
+        <div class="header-content">
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <p>Buscar</p>
+            </div>
+            <div class="user-profile">
+                <div class="user-text">
+                    <p>Eduardo</p>
+                    <p>Premium</p>
+                </div>
+                <i class="fa-solid fa-caret-down"></i>
+                <div class="user-image">
+                    <img src="img/foto-edu-proa.jpg">
+                </div>
+            </div>
+        </div>
+    </header>
+    <aside style="grid-area: grid-aside">
+        <div class="aside-menu">
+            <div class="item-section">
+                <i class="fa-solid fa-house"></i>
+                <p>Home</p>
+            </div>
+            <div class="item-section">
+                <i class="fa-brands fa-searchengin"></i>
+                <p>Buscar</p>
+            </div>
+            <div class="item-section">
+                <i class="fa-solid fa-heart"></i>
+                <p>Likes</p>
+            </div>
+            <div class="item-section">
+                <i class="fa-solid fa-music"></i>
+                <p>Playlist</p>
+            </div>
+            <div class="item-section">
+                <i class="fa-solid fa-gear"></i>
+                <p>Settings</p>
+            </div>
+            <div class="item-section">
+                <i class="fa-solid fa-crown"></i>
+                <p>Subscription</p>
+            </div>
+            <div></div>
+            <div></div>
+        </div>
+
+    </aside>
+    <main style="grid-area: grid-main"></main>
+    <footer style="grid-area: grid-footer"></footer>
     <script src="js/script.js"></script>
 </body>
-<footer></footer>
 
 </html>
