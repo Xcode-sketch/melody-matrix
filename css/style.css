@@ -10,17 +10,16 @@
     --cor-fonte: hsl(0, 0%, 100%);
     --cor-fundo: hsl(0, 0%, 0%);
 }
-/* .white mode {
-    Modo claro (Não implementado ainda)
+.white-mode {
     --cor-destaque: hsl(from var(--cor-destaque) h s calc(l + 15));
     --cor-fonte: hsl(from var(--cor-fonte) h s calc(l - 100));
     --cor-fundo: hsl(from var(--cor-fundo) h s calc(l + 100));
-} */
+}
 body {
     height: 100vh; /*Força a taag body a ocupar toda a págiina mesmo que não há elementos preenchendo*/
     display: grid;
     grid-template-columns: 0.35fr 1fr 1fr;
-    grid-template-rows: 0.2fr 2fr 0.3fr;
+    grid-template-rows: 0.2fr 2fr 0.2fr;
     /*Define a grade a ser trabalhada... Os nomes podem ser
     observados lá no HTML com o nome de grid-area: grid-main por exemplo */
     grid-template-areas:
@@ -111,4 +110,45 @@ body {
 .item-section {
     display: flex;
     
+}
+
+.top-music {
+    background-color: rgb(255, 0, 0);
+}
+.music-player { 
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: aquamarine;
+    height: 100%;
+    font-size: 1.7em;
+}
+
+.card {
+    width: 20%;
+    display: flex;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+    background: bisque;
+}
+.card::before,
+.card::after {
+    content: 'a';
+    background-color: #007bff;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.card-text {
+    width: 100%;
+    height: 50%;
+}
+.card-image {
+    width: 100%;
+    height: 50%;
+}
+.card-image img {
+    width: 100%;
 }
